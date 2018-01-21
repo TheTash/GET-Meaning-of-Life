@@ -1,13 +1,15 @@
 var https = require('https');
 console.log('I did it, right?');
+
 var options = {
   host: "www.example.org",
   path: "/"
 };
 
 // called by https when the request is made.
-var callback = function() {
+var callback = function(response) {
   console.log("In response handler callback!");
+  console.log('the response argument is here', response);
 }
 
 console.log("I'm about to make the request!");
